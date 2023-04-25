@@ -28,7 +28,7 @@ O projeto sera um sistema de criação e gestão de fichas de RPG de mesa, nós 
 
 1. Login
     
-2. Cadatro
+2. Cadastro
    
 3. Usuário 
     1. Mestre
