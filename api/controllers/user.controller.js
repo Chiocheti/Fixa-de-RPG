@@ -5,6 +5,11 @@ const { User } = require('../models');
 
 const userController = {
 
+    async index(req, res) {
+        const data = await User.findAll();
+        return res.status(201).json(data)
+    },
+
     async store(req, res) {
         try {
             const user = req.body;
