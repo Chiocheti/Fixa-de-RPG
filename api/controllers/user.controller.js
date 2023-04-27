@@ -8,6 +8,7 @@ const userController = {
     async index(req, res) {
         try {
             const data = await User.findAll();
+
             return res.status(201).json(data)
         } catch (error) {
             console.log('Houve um erro: ' + error);
@@ -19,7 +20,7 @@ const userController = {
         try {
             const user = req.body;
 
-            const data = await User.create({ ...user, userPassword: bcrypt.hashSync(user.userPassword, 10) });
+            const data = await User.create({ ...user, password: bcrypt.hashSync(user.password, 10) });
 
             return res.status(201).json(data);
         } catch (error) {
