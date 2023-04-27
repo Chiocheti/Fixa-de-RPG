@@ -6,8 +6,13 @@ const { User } = require('../models');
 const userController = {
 
     async index(req, res) {
-        const data = await User.findAll();
-        return res.status(201).json(data)
+        try {
+            const data = await User.findAll();
+            return res.status(201).json(data)
+        } catch (error) {
+            console.log('Houve um erro: ' + error);
+            return res.status(500).json({ message: 'Server error: ', error });
+        }
     },
 
     async store(req, res) {
